@@ -1,0 +1,16 @@
+spring.application.name: api-cdt-gateway-service
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://mongodb:27017/cdt-gateway-db
+      database: cdt-gateway-db
+
+bayargw:
+  merchant-id: YOUR_MERCHANT_ID
+  transaction-key: YOUR_TRANSACTION_KEY
+  service:
+    check-account-inquiry:
+      api-url: https://api.bayargw.com/2.0/bluepay/disbursement/CheckAccountInquiry
+    transfer-balance:
+      api-url: https://api.bayargw.com/2.0/bluepay/disbursement/transfer
