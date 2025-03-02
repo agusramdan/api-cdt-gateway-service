@@ -39,7 +39,7 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/api-cdt-cdm-service:${{ env.VERSION }} .
-          docker tag ${{ secrets.DOCKER_USERNAME }}/api-cdt-cdm-service:${{ env.VERSION }} ${{ secrets.DOCKER_USERNAME }}/api-cdt-cdm-service:dev
-          docker push ${{ secrets.DOCKER_USERNAME }}/api-cdt-cdm-service:${{ env.VERSION }}
-          docker push ${{ secrets.DOCKER_USERNAME }}/api-cdt-cdm-service:dev
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/api-cdt-gateway-service:${{ env.VERSION }} .
+          docker tag ${{ secrets.DOCKER_USERNAME }}/api-cdt-gateway-service:${{ env.VERSION }} ${{ secrets.DOCKER_USERNAME }}/api-cdt-gateway-service:dev
+          docker push ${{ secrets.DOCKER_USERNAME }}/api-cdt-gateway-service:${{ env.VERSION }}
+          docker push ${{ secrets.DOCKER_USERNAME }}/api-cdt-gateway-service:dev
