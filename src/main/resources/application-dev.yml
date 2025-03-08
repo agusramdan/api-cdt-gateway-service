@@ -1,0 +1,8 @@
+spring.application.name: payment-gatway-client
+
+bayargw:
+  service:
+    check-account-inquiry:
+      api-url: https://bluepaynet-uat.indivaragroup.com/2.0/bluepay/disbursement/CheckAccountInquiry
+    transfer-balance:
+      api-url: https://bluepaynet-uat.indivaragroup.com/2.0/bluepay/disbursement/transfer

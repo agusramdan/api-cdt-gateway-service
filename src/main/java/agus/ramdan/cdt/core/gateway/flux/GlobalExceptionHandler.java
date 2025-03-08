@@ -56,7 +56,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(BadRequestException.class)
     public Mono<Void> handleBadRequest(BadRequestException ex, ServerWebExchange exchange) {
-        return handleExceptionWithErrors(exchange, HttpStatus.BAD_REQUEST, "Bad Request", ex.getMessage(), ex.getErrors());
+        return handleExceptionWithErrors(exchange, HttpStatus.BAD_REQUEST, ex);
     }
 
     @ExceptionHandler(NoContentException.class)
@@ -85,6 +85,11 @@ public class GlobalExceptionHandler {
     private Mono<Void> handleExceptionWithErrors(ServerWebExchange exchange, HttpStatus status, String message, String details, ErrorValidation ... errors) {
         log.error("trace_id={}, span_id={}, message={}", getTraceId(), getSpanId(), details);
         Errors errorResponse = new Errors(new Date(), message, getTraceId(), getSpanId(), details, errors);
+        return writeJsonResponse(exchange, status, errorResponse);
+    }
+    private Mono<Void> handleExceptionWithErrors(ServerWebExchange exchange,HttpStatus status, XxxException ex) {
+        Errors errorResponse =  ex.create(getTraceId(), getSpanId(), "");
+        log.error("trace_id={}, span_id={}, message={}", errorResponse.getTrace_id(), errorResponse.getSpan_id(), errorResponse.getMessage());
         return writeJsonResponse(exchange, status, errorResponse);
     }
 

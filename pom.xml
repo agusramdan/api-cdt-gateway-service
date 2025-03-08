@@ -97,7 +97,7 @@
 		<dependency>
 			<groupId>agus.ramdan.cdt</groupId>
 			<artifactId>api-cdt-core-service</artifactId>
-			<version>3.3.8.1.20250303</version>
+			<version>3.3.8.1.20250306</version>
 			<classifier>client</classifier>
 			<exclusions>
 				<exclusion>

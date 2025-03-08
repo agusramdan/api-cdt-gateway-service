@@ -1,6 +1,5 @@
 package agus.ramdan.cdt.core.gateway.mapper;
 
-import agus.ramdan.cdt.core.gateway.controller.dto.account.AccountStatusDTO;
 import agus.ramdan.cdt.core.gateway.service.account.CheckAccountInquiryResponseDTO;
 import agus.ramdan.cdt.core.master.controller.dto.BeneficiaryAccountDTO;
 import org.mapstruct.Mapper;

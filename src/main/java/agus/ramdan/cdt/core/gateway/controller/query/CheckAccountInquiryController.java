@@ -1,6 +1,5 @@
 package agus.ramdan.cdt.core.gateway.controller.query;
 
-import agus.ramdan.cdt.core.gateway.controller.dto.account.AccountStatusDTO;
 import agus.ramdan.cdt.core.gateway.service.account.CheckAccountInquiryService;
 import agus.ramdan.cdt.core.master.controller.dto.BeneficiaryAccountDTO;
 import lombok.RequiredArgsConstructor;

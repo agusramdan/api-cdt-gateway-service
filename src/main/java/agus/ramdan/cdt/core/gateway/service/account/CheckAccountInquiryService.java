@@ -1,7 +1,6 @@
 package agus.ramdan.cdt.core.gateway.service.account;
 
 import agus.ramdan.cdt.core.gateway.config.BayarGWConfig;
-import agus.ramdan.cdt.core.gateway.controller.dto.account.AccountStatusDTO;
 import agus.ramdan.cdt.core.gateway.mapper.CheckAccountInquiryMapper;
 import agus.ramdan.cdt.core.gateway.utils.ResponseUtils;
 import agus.ramdan.cdt.core.master.controller.dto.BeneficiaryAccountDTO;
