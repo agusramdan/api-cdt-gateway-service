@@ -63,7 +63,7 @@ public class TransferBalanceService {
                             savedEntity.setResponseCode(r.getResponseCode());
                             savedEntity.setResponseMessage(r.getResponseMessage());
                             transferBalanceRepository.save(savedEntity);
-                            return  ResponseUtils.responseCheck(r.getResponseCode(),r.getResponseMessage(),r.getData());
+                            return  ResponseUtils.responseCheck(r.getResponseCode(),r.getResponseMessage(),r.getData(),serviceRequest);
                         })
                         .flatMap(response -> {
                             savedEntity.setBankTransactionId(response.getBankTransactionId());

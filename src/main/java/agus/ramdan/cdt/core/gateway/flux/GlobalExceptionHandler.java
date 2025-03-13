@@ -89,7 +89,7 @@ public class GlobalExceptionHandler {
     }
     private Mono<Void> handleExceptionWithErrors(ServerWebExchange exchange,HttpStatus status, XxxException ex) {
         Errors errorResponse =  ex.create(getTraceId(), getSpanId(), "");
-        log.error("trace_id={}, span_id={}, message={}", errorResponse.getTrace_id(), errorResponse.getSpan_id(), errorResponse.getMessage());
+        log.error("trace_id={}, span_id={}, message={}", errorResponse.getTraceId(), errorResponse.getSpanId(), errorResponse.getMessage());
         return writeJsonResponse(exchange, status, errorResponse);
     }
 

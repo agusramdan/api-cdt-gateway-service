@@ -50,7 +50,7 @@ public class CheckAccountInquiryService {
                 .bodyValue(inquiryRequest)
                 .retrieve()
                 .bodyToMono(CheckAccountInquiryResponseDTO.class)
-                .flatMap(r ->ResponseUtils.responseCheck(r.getResponseCode(),r.getResponseMessage(),r))
+                .flatMap(r ->ResponseUtils.responseCheck(r.getResponseCode(),r.getResponseMessage(),r,inquiryRequest))
                 .map(checkAccountInquiryMapper::toBeneficiaryAccountDTO);
     }
 }

@@ -1,16 +1,11 @@
 spring.application.name: payment-gatway-client
 
 bayargw:
+  merchant-id: MPS01
+  transaction-key: M3r@h##Pu+1h
   service:
     check-account-inquiry:
       api-url: https://bluepaynet-uat.indivaragroup.com/2.0/bluepay/disbursement/CheckAccountInquiry
     transfer-balance:
       api-url: https://bluepaynet-uat.indivaragroup.com/2.0/bluepay/disbursement/transfer
 
-
-logging:
-  level:
-    agus:
-      ramdan:
-        base:
-          exception: debug
