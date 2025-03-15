@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>agus.ramdan</groupId>
 	<artifactId>api-cdt-gateway-service</artifactId>
-	<version>3.3.8</version>
+	<version>3.3.8.1.20250315</version>
 	<name>Payment Gateway Service</name>
 	<description>Payment Gateway Service</description>
 	<url/>
@@ -97,7 +97,7 @@
 		<dependency>
 			<groupId>agus.ramdan.cdt</groupId>
 			<artifactId>api-cdt-core-service</artifactId>
-			<version>3.3.8.1.202503181</version>
+			<version>3.3.8.1.202503188</version>
 			<classifier>client</classifier>
 			<exclusions>
 				<exclusion>

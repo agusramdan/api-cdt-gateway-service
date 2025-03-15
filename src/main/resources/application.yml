@@ -1,6 +1,7 @@
-spring.application.name: api-cdt-gateway-service
-
+---
 spring:
+  application:
+    name: api-cdt-gateway-service
   data:
     mongodb:
       uri: mongodb://mongodb:27017/cdt-gateway-db
@@ -14,3 +15,16 @@ bayargw:
       api-url: https://api.bayargw.com/2.0/bluepay/disbursement/CheckAccountInquiry
     transfer-balance:
       api-url: https://api.bayargw.com/2.0/bluepay/disbursement/transfer
+
+
+logging:
+  level:
+    root: WARN
+    org.springframework: WARN
+    org.hibernate: WARN
+    org.apache.http: WARN
+    org.apache.http.wire: WARN
+    org.apache.http.headers: WARN
+    agus.ramdan.base: WARN
+    agus.ramdan.base.exception: DEBUG
+    agus.ramdan.cdt.core: INFO

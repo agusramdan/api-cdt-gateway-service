@@ -8,7 +8,6 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring")
 public interface CheckAccountInquiryMapper {
-
     CheckAccountInquiryMapper INSTANCE = Mappers.getMapper(CheckAccountInquiryMapper.class);
     @Mapping(target = "account_number", source = "data.accountNo")
     @Mapping(target = "account_name", source = "data.accountName")
