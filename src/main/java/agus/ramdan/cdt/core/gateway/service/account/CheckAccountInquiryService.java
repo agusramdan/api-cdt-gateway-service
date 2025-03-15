@@ -2,7 +2,7 @@ package agus.ramdan.cdt.core.gateway.service.account;
 
 import agus.ramdan.cdt.core.gateway.config.BayarGWConfig;
 import agus.ramdan.cdt.core.gateway.mapper.CheckAccountInquiryMapper;
-import agus.ramdan.cdt.core.gateway.utils.ResponseUtils;
+import agus.ramdan.cdt.core.gateway.flux.ResponseUtils;
 import agus.ramdan.cdt.core.master.controller.dto.BeneficiaryAccountDTO;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.http.MediaType;

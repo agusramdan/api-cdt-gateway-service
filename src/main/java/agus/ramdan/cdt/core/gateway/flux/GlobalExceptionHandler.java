@@ -54,34 +54,29 @@ public class GlobalExceptionHandler {
         return handleExceptionWithErrors(exchange, HttpStatus.BAD_REQUEST, "Validation Error", ex.getMessage(), errors.toArray(new ErrorValidation[0]));
     }
 
-    @ExceptionHandler(BadRequestException.class)
-    public Mono<Void> handleBadRequest(BadRequestException ex, ServerWebExchange exchange) {
-        return handleExceptionWithErrors(exchange, HttpStatus.BAD_REQUEST, ex);
-    }
-
     @ExceptionHandler(NoContentException.class)
     public Mono<Void> handleNoContent(NoContentException ex, ServerWebExchange exchange) {
         log.debug("trace_id={}, span_id={}, message={}", getTraceId(), getSpanId(), ex.getMessage(), ex);
         exchange.getResponse().setStatusCode(HttpStatus.NO_CONTENT);
         return exchange.getResponse().setComplete();
     }
-
+    @ExceptionHandler(XxxException.class)
+    public Mono<Void> handleInternalServerError(XxxException ex, ServerWebExchange exchange) {
+        return handleExceptionWithErrors(exchange, ex.getHttpStatus(),ex);
+    }
     @ExceptionHandler(InternalServerErrorException.class)
     public Mono<Void> handleInternalServerError(InternalServerErrorException ex, ServerWebExchange exchange) {
         return handleException(exchange, HttpStatus.INTERNAL_SERVER_ERROR, "Internal Server Error. Please Contact Helpdesk", ex.getMessage());
     }
-
     @ExceptionHandler(Exception.class)
     public Mono<Void> handleGenericException(Exception ex, ServerWebExchange exchange) {
         return handleException(exchange, HttpStatus.INTERNAL_SERVER_ERROR, "Internal Server Error. Please Contact Helpdesk", ex.getMessage());
     }
-
     private Mono<Void> handleException(ServerWebExchange exchange, HttpStatus status, String message, String details) {
         log.error("trace_id={}, span_id={}, message={}", getTraceId(), getSpanId(), details);
         Errors errorResponse = new Errors(new Date(), message, getTraceId(), getSpanId(), details, null);
         return writeJsonResponse(exchange, status, errorResponse);
     }
-
     private Mono<Void> handleExceptionWithErrors(ServerWebExchange exchange, HttpStatus status, String message, String details, ErrorValidation ... errors) {
         log.error("trace_id={}, span_id={}, message={}", getTraceId(), getSpanId(), details);
         Errors errorResponse = new Errors(new Date(), message, getTraceId(), getSpanId(), details, errors);
@@ -92,7 +87,6 @@ public class GlobalExceptionHandler {
         log.error("trace_id={}, span_id={}, message={}", errorResponse.getTraceId(), errorResponse.getSpanId(), errorResponse.getMessage());
         return writeJsonResponse(exchange, status, errorResponse);
     }
-
     private Mono<Void> writeJsonResponse(ServerWebExchange exchange, HttpStatus status, Errors errorResponse) {
         try {
             exchange.getResponse().setStatusCode(status);

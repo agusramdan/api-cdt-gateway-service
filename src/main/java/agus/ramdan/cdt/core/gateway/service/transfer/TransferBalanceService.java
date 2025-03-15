@@ -6,7 +6,7 @@ import agus.ramdan.cdt.core.gateway.controller.dto.transfer.TransferBalanceRespo
 import agus.ramdan.cdt.core.gateway.domain.TransferBalanceEntity;
 import agus.ramdan.cdt.core.gateway.mapper.TransferBalanceMapper;
 import agus.ramdan.cdt.core.gateway.repository.TransferBalanceRepository;
-import agus.ramdan.cdt.core.gateway.utils.ResponseUtils;
+import agus.ramdan.cdt.core.gateway.flux.ResponseUtils;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.http.MediaType;

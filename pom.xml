@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>agus.ramdan</groupId>
 	<artifactId>api-cdt-gateway-service</artifactId>
-	<version>3.3.8.1.20250315</version>
+	<version>3.3.8.1.20250316</version>
 	<name>Payment Gateway Service</name>
 	<description>Payment Gateway Service</description>
 	<url/>
@@ -39,10 +39,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-starter-web</artifactId>-->
-<!--		</dependency>-->
 		<dependency>
 			<groupId>io.micrometer</groupId>
 			<artifactId>micrometer-tracing-bridge-brave</artifactId>
@@ -51,10 +47,6 @@
 			<groupId>io.zipkin.reporter2</groupId>
 			<artifactId>zipkin-reporter-brave</artifactId>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.cloud</groupId>-->
-<!--			<artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>-->
-<!--		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webflux</artifactId>
@@ -179,5 +171,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
